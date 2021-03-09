@@ -1,6 +1,7 @@
 package io.flutter.gamepad_controller;
 
 import android.app.Activity;
+import android.graphics.SurfaceTexture;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -19,6 +20,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.view.TextureRegistry;
 
 /** GamepadControllerPlugin */
 public class GamepadControllerPlugin extends Activity implements FlutterPlugin, MethodCallHandler {

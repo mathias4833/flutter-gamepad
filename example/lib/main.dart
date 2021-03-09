@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gamepad_controller/gamapad_event.dart';
 import 'package:gamepad_controller/gamepad_view.dart';
 
@@ -26,12 +27,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    var test = TextureLayer(
+        rect: Rect.largest,
+        textureId: 0
+    );
+
     return MaterialApp(
       builder: (context, child) {
         return Scaffold(
           body: Column(
             children: [
-              Text('TEST TEST'),
               GamepadView(
                 onAxisHandle: _gamepadAxis,
                 onButtonHandle: _gamepadButton,

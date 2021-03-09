@@ -35,7 +35,7 @@ class NativeView implements PlatformView {
         rootView.setOrientation(LinearLayout.VERTICAL);
 
         EditText gamepadView = new GamepadView(context, eventSink);
-        gamepadView.setBackgroundColor(Color.GREEN);
+        gamepadView.setBackgroundColor(Color.TRANSPARENT);
         ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(1, 1);
         rootView.addView(gamepadView, lp);
 
