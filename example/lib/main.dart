@@ -13,7 +13,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  GamepadAxisEvent _gamepadAxisEvent;
+
   void _gamepadAxis(GamepadAxisEvent axis) {
+    setState(() {
+      _gamepadAxisEvent = axis;
+    });
     print("${axis.sourceInput} ${axis.x} ${axis.y}");
   }
 
@@ -27,16 +32,15 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var test = TextureLayer(
-        rect: Rect.largest,
-        textureId: 0
-    );
-
     return MaterialApp(
       builder: (context, child) {
         return Scaffold(
           body: Column(
             children: [
+              Text('TEST TEST'),
+              Text(_gamepadAxisEvent?.sourceInput ?? ''),
+              Text(_gamepadAxisEvent?.x.toString() ?? ''),
+              Text(_gamepadAxisEvent?.y.toString() ?? ''),
               GamepadView(
                 onAxisHandle: _gamepadAxis,
                 onButtonHandle: _gamepadButton,

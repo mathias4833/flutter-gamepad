@@ -13,7 +13,6 @@ class GamepadView extends StatefulWidget {
   final Function(GamepadButtonEvent button) onButtonHandle;
   final Function(GamepadAxisEvent axis) onAxisHandle;
   final Function(GamepadDpadEvent dpad) onDpadHandle;
-
   GamepadView({
     @required this.onButtonHandle,
     @required this.onAxisHandle,
@@ -115,7 +114,7 @@ class _GamepadViewState extends State<GamepadView> {
 
           return service;
         },
-      ),
+      )
     );
   }
 
